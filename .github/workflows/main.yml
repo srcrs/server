@@ -1,9 +1,8 @@
-name: CI
+name: Ubuntu
 on: [push]
 jobs:
-  build:
+  Ubuntu:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v1
+    - name: Setup Debug Session
+      uses: csexton/debugger-action@master
