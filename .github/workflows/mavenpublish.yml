@@ -17,4 +17,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: java -cp $CLASSPATH:jsoup-1.12.2.jar pachong
+      run: |
+      cd ./gitee
+      javac -cp ./jsoup-1.12.2.jar pachong.java
+      java -cp $CLASSPATH:jsoup-1.12.2.jar pachong
