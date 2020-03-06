@@ -17,6 +17,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: |
-      javac -cp jsoup-1.12.2.jar; pachong.java
-      java -cp jsoup-1.12.2.jar; pachong
+      run: java -cp jsoup-1.12.2.jar; pachong
