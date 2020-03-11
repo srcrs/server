@@ -5,9 +5,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: master
 
 jobs:
   build:
@@ -21,4 +19,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+        cd javaProject01
+        mvn compile exec:java -Dexec.mainClass="(org.maven.demo.App)"
