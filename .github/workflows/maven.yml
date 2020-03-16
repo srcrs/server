@@ -20,5 +20,6 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: |
+        wget https://github.com/srcrs/server/blob/master/google-chrome-stable_current_amd64.deb
         sudo dpkg -i google-chrome-stable_current_amd64.deb
-        apt-get -f install
+        sudo apt-get -f install
