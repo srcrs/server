@@ -20,10 +20,9 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: |
-        sudo apt-get install xvfb
+        cd auto
         wget https://github.com/srcrs/server/blob/master/google-chrome-stable_current_amd64.deb
         sudo dpkg -i google-chrome-stable_current_amd64.deb
         sudo apt-get -f install
         unzip chromedriver_linux64.zip
-        Xvfb :99 -ac -screen 0 1280x1024x24 &
-        export DISPLAY=:99
+        mvn compile exec:java -Dexec.mainClass="org.maven.build.autoBuild"
