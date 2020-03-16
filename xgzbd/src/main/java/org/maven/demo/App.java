@@ -44,7 +44,7 @@ public class App
             System.setProperty("webdriver.chrome.driver", "chromedriver");
             //如果不采用无界面模式则不需要使用chromeOptions参数
             //这句话相当于创建了一个窗口
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(chromeOptions);
             //访问链接
             driver.get("http://jktb.haedu.gov.cn/?ext=fX93MD81Pi82fXV7OSQ=&rn=1194639372");
             //寻找界面元素然后点击
@@ -100,7 +100,7 @@ public class App
             Thread.sleep(4000);
            // System.out.println(driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[2]/div[2]/span")).getText());
             Thread.sleep(4000);
-         //   driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[16]/button")).click();
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[16]/button")).click();
             driver.close();
         } catch (Exception e) {
             System.out.println(cell_1.getContents().trim());
