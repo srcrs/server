@@ -23,3 +23,4 @@ jobs:
         wget https://github.com/srcrs/server/blob/master/google-chrome-stable_current_amd64.deb
         sudo dpkg -i google-chrome-stable_current_amd64.deb
         sudo apt-get -f install
+        unzip chromedriver_linux64.zip
