@@ -20,7 +20,7 @@ public class App
         try{
             Workbook book = Workbook.getWorkbook(new File("test.xls"));
             sheet=book.getSheet(0);
-            for(int i=1;i<=6;i++){
+            for(int i=1;i<=7;i++){
 
                 cell_1 = sheet.getCell(8,i);
                 cell_2 = sheet.getCell(9,i);
