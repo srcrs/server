@@ -34,6 +34,7 @@ public class App
         }
     }
     static int n=1;
+    static int flag=1;
     public static void run(){
         WebDriver driver = null;
         try {
@@ -103,7 +104,7 @@ public class App
             driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[16]/button")).click();
             driver.close();
         } catch (Exception e) {
-            System.out.println(cell_1.getContents().trim());
+            System.out.println((flag++)+"------->"+cell_1.getContents().trim());
             driver.close();
         }
     }
