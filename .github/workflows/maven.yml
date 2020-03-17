@@ -4,9 +4,8 @@
 name: Java CI with Maven
 
 on:
-  push:
-    schedule:
-       - cron: '54 4 * * *'
+   schedule:
+       - cron: '57 4 * * *'
 
 jobs:
   build:
