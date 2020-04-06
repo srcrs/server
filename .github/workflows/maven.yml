@@ -5,7 +5,7 @@ name: Java CI with Maven
 
 on:
    schedule: 
-       - cron: '8,40 16 * * *'
+       - cron: '8,40 4 * * *' ## 凌晨填表太假了，改成12点。
 
 jobs:
   build:
