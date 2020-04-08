@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
 
 import java.io.File;
 
@@ -28,6 +30,14 @@ public class App {
                 cell_4 = sheet.getCell(11, i);
                 cell_5 = sheet.getCell(12, i);
                 run();
+            }
+            String json = "{\"content\":[{\"type\":0,\"data\":\"本次成功:"+flag+",失败："+(9-flag)+"\"}]}";
+            Connection.Response res = Jsoup.connect("https://app.qun.qq.com/cgi-bin/api/hookrobot_send?key=c71ac5abdc79b809dfd121bd6266b15bf4df206b")
+                    .ignoreHttpErrors(true)
+                    .requestBody(json)
+                    .method(Connection.Method.POST).execute();
+            if(res.statusCode()==500){
+                System.out.println("发送成功！");
             }
         } catch (Exception e) {
 
