@@ -31,7 +31,7 @@ public class App {
                 cell_5 = sheet.getCell(12, i);
                 run();
             }
-            String json = "{\"content\":[{\"type\":0,\"data\":\"本次成功:"+(10-flag)+",失败："+(flag-1)+"\"}]}";
+            String json = "{\"content\":[{\"type\":0,\"data\":\"本次成功:"+(10-flag)+",失败:"+(flag-1)+"\"}]}";
             Connection.Response res = Jsoup.connect("https://app.qun.qq.com/cgi-bin/api/hookrobot_send?key=c71ac5abdc79b809dfd121bd6266b15bf4df206b")
                     .ignoreHttpErrors(true)
                     .requestBody(json)
