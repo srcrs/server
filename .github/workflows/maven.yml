@@ -19,8 +19,8 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-        env: 
-          URL: ${{ secrets.URL }}
+      env: 
+        URL: ${{ secrets.URL }}
       run: |
         cd xgzbd
         sudo dpkg -i google-chrome-stable_current_amd64.deb
