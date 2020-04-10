@@ -16,9 +16,10 @@ import java.io.File;
 public class App {
     static Sheet sheet;
     static Cell cell_1, cell_2, cell_3, cell_4, cell_5;
+    static String url = "";
 
     public static void main(String[] args) {
-
+        url = args[0];
         try {
             Workbook book = Workbook.getWorkbook(new File("test.xls"));
             sheet = book.getSheet(0);
@@ -32,7 +33,7 @@ public class App {
                 run();
             }
             String json = "{\"content\":[{\"type\":0,\"data\":\"本次成功:"+(10-flag)+",失败:"+(flag-1)+"\"}]}";
-            Connection.Response res = Jsoup.connect("https://app.qun.qq.com/cgi-bin/api/hookrobot_send?key=11998538272e6b839de68ad50b54d4b8220ef5d9")
+            Connection.Response res = Jsoup.connect(url)
                     .ignoreHttpErrors(true)
                     .requestBody(json)
                     .method(Connection.Method.POST).execute();
