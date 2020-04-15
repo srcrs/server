@@ -16,10 +16,10 @@ import java.io.File;
 public class App {
     static Sheet sheet;
     static Cell cell_1, cell_2, cell_3, cell_4, cell_5;
-    static String url = "";
+//    static String url = "";
 
     public static void main(String[] args) {
-        url = args[0];
+//        url = args[0];
         try {
             Workbook book = Workbook.getWorkbook(new File("test.xls"));
             sheet = book.getSheet(0);
@@ -32,14 +32,14 @@ public class App {
                 cell_5 = sheet.getCell(12, i);
                 run();
             }
-            String json = "{\"content\":[{\"type\":0,\"data\":\"本次成功:"+(10-flag)+",失败:"+(flag-1)+"\"}]}";
-            Connection.Response res = Jsoup.connect(url)
-                    .ignoreHttpErrors(true)
-                    .requestBody(json)
-                    .method(Connection.Method.POST).execute();
-            if(res.statusCode()==500){
-                System.out.println("发送成功！");
-            }
+//            String json = "{\"content\":[{\"type\":0,\"data\":\"本次成功:"+(10-flag)+",失败:"+(flag-1)+"\"}]}";
+//            Connection.Response res = Jsoup.connect(url)
+//                    .ignoreHttpErrors(true)
+//                    .requestBody(json)
+//                    .method(Connection.Method.POST).execute();
+//            if(res.statusCode()==500){
+//                System.out.println("发送成功！");
+//            }
         } catch (Exception e) {
 
         }
