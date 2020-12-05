@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: '${random.int[0,60]} ${random.int[0,12]} * * *'
+    - cron: ${random.int[0,60]} ${random.int[0,12]} * * *
 
 jobs:
   build:
